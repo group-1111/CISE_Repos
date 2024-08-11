@@ -5,10 +5,13 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { BookModule } from './api/books/book.module';
 import { ConfigModule } from '@nestjs/config';
 
+
+
+
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.DB_URI),
+    MongooseModule.forRoot(process.env.DB_URL),
     BookModule,
   ],
   controllers: [AppController],
